@@ -234,7 +234,11 @@ int osi_alarm_set(osi_alarm_t *alarm, period_ms_t timeout)
         ret = -1;
         goto end;
     }
-    
+
+    if (timeout == 0) {
+        timeout = 2 / portTICK_PERIOD_MS;
+    }
+
     if (xTimerChangePeriod(alarm->alarm_hdl, timeout / portTICK_PERIOD_MS, BT_ALARM_CHG_PERIOD_WAIT_TICKS) != pdPASS) {
         LOG_ERROR("%s chg period error\n", __func__);
         ret = -2;
