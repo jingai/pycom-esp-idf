@@ -31,6 +31,7 @@
  */
 void esp_clk_init(void);
 
+void select_rtc_slow_clk(rtc_slow_freq_t slow_clk);
 
 /**
  * @brief Get the calibration value of RTC slow clock

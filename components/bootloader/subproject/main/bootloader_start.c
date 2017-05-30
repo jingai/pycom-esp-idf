@@ -733,11 +733,9 @@ static void clock_configure(void)
      * part of the start up time by enabling 32k XTAL early.
      * App startup code will wait until the oscillator has started up.
      */
-#ifdef CONFIG_ESP32_RTC_CLOCK_SOURCE_EXTERNAL_CRYSTAL
     if (!rtc_clk_32k_enabled()) {
         rtc_clk_32k_bootstrap();
     }
-#endif
 }
 
 static void uart_console_configure(void)

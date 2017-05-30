@@ -86,7 +86,7 @@ void IRAM_ATTR ets_update_cpu_frequency(uint32_t ticks_per_us)
     g_ticks_per_us_app = ticks_per_us;
 }
 
-static void select_rtc_slow_clk(rtc_slow_freq_t slow_clk)
+void select_rtc_slow_clk(rtc_slow_freq_t slow_clk)
 {
     if (slow_clk == RTC_SLOW_FREQ_32K_XTAL) {
         /* 32k XTAL oscillator needs to be enabled and running before it can
