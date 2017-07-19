@@ -18,12 +18,12 @@
 #include "sdkconfig.h"
 #include "esp_attr.h"
 #include "esp_log.h"
+#include "soc/soc.h"
+#include "soc/rtc.h"
 #include "esp_clk.h"
 #include "rom/ets_sys.h"
 #include "rom/uart.h"
 #include "rom/rtc.h"
-#include "soc/soc.h"
-#include "soc/rtc.h"
 #include "soc/rtc_cntl_reg.h"
 
 /* Number of cycles to wait from the 32k XTAL oscillator to consider it running.
@@ -33,7 +33,7 @@
 #define XTAL_32K_DETECT_CYCLES  32
 #define SLOW_CLK_CAL_CYCLES     CONFIG_ESP32_RTC_CLK_CAL_CYCLES
 
-static void select_rtc_slow_clk(rtc_slow_freq_t slow_clk);
+void select_rtc_slow_clk(rtc_slow_freq_t slow_clk);
 
 static const char* TAG = "clk";
 /*
