@@ -137,6 +137,13 @@
 //all 32 bits of SPI_ADDR_REG are usable/used.
 
 #define SPI_CTRL_REG(i)          (REG_SPI_BASE(i) + 0x8)
+/* SPI_USR_ADDR_VALUE : R/W ;bitpos:[31:0] ;default: 32'h0 ; */
+/*description: [31:8]:address to slave [7:0]:Reserved.*/
+#define SPI_USR_ADDR_VALUE  0xFFFFFFFF
+#define SPI_USR_ADDR_VALUE_M  ((SPI_USR_ADDR_VALUE_V)<<(SPI_USR_ADDR_VALUE_S))
+#define SPI_USR_ADDR_VALUE_V  0xFFFFFFFF
+#define SPI_USR_ADDR_VALUE_S  0
+
 /* SPI_WR_BIT_ORDER : R/W ;bitpos:[26] ;default: 1'b0 ; */
 /*description: In command address write-data (MOSI) phases 1: LSB firs 0: MSB first*/
 #define SPI_WR_BIT_ORDER  (BIT(26))

@@ -469,6 +469,5 @@ void app_main()
     if (local_mtu_ret){
         ESP_LOGE(GATTC_TAG, "set local  MTU failed, error code = %x", local_mtu_ret);
     }
-
 }
 
